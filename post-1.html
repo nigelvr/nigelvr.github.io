@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Title - My Blog</title>
+    <link rel="stylesheet" href="styles.css">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+    };
+</script>
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div id="sidebar"></div>
+        <script>
+        fetch("sidebar.html")
+            .then(res => res.text())
+            .then(html => {
+            document.getElementById("sidebar").innerHTML = html;
+            });
+        </script>
+        <main class="main-content">
+            <article>
+                <h1 class="Geometry and computing ideas">Sketch of ideas in geometry and computing</h1>
+                <div class="post-meta">December 12, 2025</div>
+                
+                <div class="post-content">
+
+<p>We wish to apply statistics to images (e.g. computer images, hand drawings, etc.). A semi-educated guess is that the category of <b>Stratified spaces</b> might be large enough to fit what we want. </p>
+
+<p><strong>This is not directly about fitting curves.</strong> Curve fitting is nice, but the resulting curves will not necessarily have any interesting meaning. Some example methods include Bezier curves and Vandermonde interpolation. Another example is simply using least-squares in a somewhat blind fashion. Suppose our computer outputs some polynomials based on some interpolation method. If the user knows about the space, they can make sense out of the equations (e.g. curve order, genus, extrema, etc). But if the user does not know about the space, then the equations may not be illuminating and could even be misleading. Similarly, if we have an image $F$ that looks like a smooth manifold, then we can approximate it using local taylor polynomials, but these are pretty uninteresting.</p>
+
+<p>Formally, we will choose images in a <it>category</it> $\mathcal{C}$ which we think of as a "hypothesis space" with a distribution $f$.</p>
+
+<hr>
+
+<h2>Rough Categorization of Drawability</h2>
+
+<p>We first split the images into <it>drawable</it> and <it>non-drawable</it>. To this end, we define a <it>stylus</it> to be a pensil or a brush. This is made precise below.</p>
+
+<h3>Drawable</h3>
+<p>We first categorize a few artistic styles. The first is that of <it>drawing</it> with a pen. We can represent this by the space of finite-length smooth curves in $\mathbb{R}^n$, and finite unions of such curves. We can consider this to be a <it>space of drawings</it>. The class of finite-area maps $C^k(U,\mathbb{R}^n)$ and their unions where $U \subset \mathbb{R}^2$ is a compact subset: these are <it>paintings</it>. Call these categories <it>stylus-categories</it>.</p>
+
+<p>Given a finite set of points $F$ and a stylus category $\mathcal{C}$, we want to know the objects in $\mathcal{C}$ which contain $F$. In other words, we want to sample from</p>
+
+$$f(\cdot|F).$$
+
+<h3>Non-drawable</h3>
+<p>We categorize these as <b>semi-algebraic sets</b>. </p>
+
+<p>First, note that we are justified in saying that an algebraic set is not necessarily drawable. A first question we have is whether Bresenham's algorithm applies. I haven't tried it yet, but I believe it does work. Regardless, such spaces are not, in general, drawable by a stylus.</p>
+
+<hr>
+
+<h2>Statistical/Geometric Theory</h2>
+<p>We will be looking for geometric, algebraic and topological constraints on our data. The basic idea is that we will have a statistic $\psi_{M,N}$ which gives the $k$-th derivatives at $N$ points, where $0 \leq k \leq M$. One can use $\psi_{M,N}$ to find the degree of the curve, extrema, and singularities. We will discuss this more in a future post.</p>
+                </div>
+                
+                <a href="index.html" class="back-link">← Back to all posts</a>
+            </article>
+        </main>
+    </div>
+</body>
+</html>
