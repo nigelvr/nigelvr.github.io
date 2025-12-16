@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brief note on hand-drawing and Lie groups</title>
+    <link rel="stylesheet" href="styles.css">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+    };
+</script>
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div id="sidebar"></div>
+        <script>
+        fetch("sidebar.html")
+            .then(res => res.text())
+            .then(html => {
+            document.getElementById("sidebar").innerHTML = html;
+            });
+        </script>
+        
+        <main class="main-content">
+            <article>
+                <h1 class="Geometry and computing ideas">Brief note on hand-drawing and Lie groups</h1>
+                <div class="post-meta">December 16, 2025</div>
+                
+                <div class="post-content">
+<p>A is a continous map from <span
+class="math inline"><em>γ</em> : [0, 1] → <em>S</em><em>O</em>(3) ⋊ <em>G</em></span>
+where <span class="math inline"><em>G</em> = ℝ<sup>3</sup></span> or
+possibly <span class="math inline"><em>S</em><em>O</em>(2)</span>. In
+other words, a drawing is a continuous path in a group like the one
+above. Call the drawing group (the semidirect product) <span
+class="math inline"><em>D</em></span>. Then the complete drawing is the
+composition <span
+class="math display">[0, 1] → <em>G</em> → ℝ<sup>2</sup>.</span> Let
+<span class="math inline"><em>P</em></span> be the , i.e. the image in
+<span class="math inline">ℝ<sup>2</sup></span> under this map.</p>
+<p> The image of <span class="math inline"><em>γ</em></span> in <span
+class="math inline"><em>D</em></span> is a <span
+class="math inline">1</span>-dimensional submanifold.</p>
+<p>Let <span class="math inline"><em>γ</em> : [0, 1] → <em>G</em></span>
+be a drawing. Let <span class="math inline">𝔤</span> be the Lie algebra
+of <span class="math inline"><em>G</em></span>. To start drawing on the
+group, choose a direction <span
+class="math inline"><em>X</em> ∈ 𝔤</span> and plot the continuous path
+<span
+class="math inline"><em>t</em> ↦ exp (<em>t</em><em>X</em>)</span>. This
+is a drawing on <span class="math inline"><em>G</em></span> in the
+direction <span class="math inline"><em>X</em></span>.</p>
+<p>I do not have anything more to say on this subject at the moment. I need to learn more about Lie theory, geometry and physics to understand
+    systems like this more.
+</p>
+
+                </div>
+                
+                <a href="index.html" class="back-link">← Back to all posts</a>
+            </article>
+        </main>
+    </div>
+</body>
+</html>
