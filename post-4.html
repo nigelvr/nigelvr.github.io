@@ -35,7 +35,7 @@
                 
                 <div class="post-content">
 
-<p>In this post, we begin a discussion of Hurwitz’s theorem, which
+    <p>In this post, we begin a discussion of Hurwitz’s theorem, which
 states that the real finite-dimensional unital normed algebras are <span
 class="math inline">ℝ</span>, <span class="math inline">ℂ</span>, <span
 class="math inline">ℍ</span> (quaternions) and <span
@@ -75,10 +75,11 @@ class="math inline"><em>q</em>(<em>a</em> + <em>i</em><em>b</em>) = <em>
 Note that we do not deal with any square roots.<br />
 </p>
 <div class="rmk">
-<p>Linear algebra in this setting works exactly as one would expect. In
-particular, if <span class="math inline">(<em>V</em>, <em>q</em>)</span>
-is such a space, then we can assume that we have an orthnormal basis
-with respect to the inner product <span
+<p><strong>Remark 1</strong>. <em>Linear algebra in this setting works
+exactly as one would expect. In particular, if <span
+class="math inline">(<em>V</em>, <em>q</em>)</span> is such a space,
+then we can assume that we have an orthnormal basis with respect to the
+inner product <span
 class="math inline">⟨⋅, ⋅⟩<sub><em>q</em></sub></span>. If <span
 class="math inline"><em>F</em> : <em>V</em> → <em>V</em></span> is an
 orthogonal map, then <span
@@ -86,7 +87,7 @@ class="math inline">⟨<em>F</em><em>x</em>, <em>F</em><em>y</em>⟩ = ⟨
 for all <span
 class="math inline"><em>x</em>, <em>y</em> ∈ <em>V</em></span>, and
 <span
-class="math inline"><em>F</em><sup><em>T</em></sup><em>F</em> = <em>I</em></span>.</p>
+class="math inline"><em>F</em><sup><em>T</em></sup><em>F</em> = <em>I</em></span>.</em></p>
 </div>
 <p>Let <span class="math inline"><em>k</em></span> be a field. A vector
 space <span class="math inline"><em>A</em></span> over <span
@@ -126,21 +127,22 @@ class="math display"><em>v</em><sup>*</sup> = ⟨<em>v</em>, <em>e</em>⟩
 We note the following properties for <span
 class="math inline"><em>v</em> ∈ <em>A</em></span>.</p>
 <div class="prop">
+<p><strong>Proposition 1</strong>. </p>
 <ol>
-<li><p><span
-class="math inline"><em>v</em><sup>*</sup><em>v</em> = <em>q</em>(<em>v</em>)<em>e</em></span></p></li>
-<li><p><span
-class="math inline"><em>v</em><sup>*</sup><sup>*</sup> = <em>v</em></span></p></li>
-<li><p><span
-class="math inline"><em>A</em><sub><em>u</em></sub><sup>−1</sup> = <em>A</em><sub><em>u</em></sub><sup><em>T</em></sup> = <em>A</em><sub><em>u</em><sup>*</sup></sub></span></p></li>
+<li><p><em><span
+class="math inline"><em>v</em><sup>*</sup><em>v</em> = <em>q</em>(<em>v</em>)<em>e</em></span></em></p></li>
+<li><p><em><span
+class="math inline"><em>v</em><sup>*</sup><sup>*</sup> = <em>v</em></span></em></p></li>
+<li><p><em><span
+class="math inline"><em>A</em><sub><em>u</em></sub><sup>−1</sup> = <em>A</em><sub><em>u</em></sub><sup><em>T</em></sup> = <em>A</em><sub><em>u</em><sup>*</sup></sub></span></em></p></li>
 </ol>
 </div>
 <div class="lem">
-<p>(Braiding equation) Let <span
+<p><strong>Lemma 1</strong>. <em>(Braiding equation) Let <span
 class="math inline"><em>u</em>, <em>v</em></span> be <span
 class="math inline">ℝ</span>-linearly independent unit-vectors. Then
 <span
-class="math display"><em>A</em><sub><em>u</em></sub><sup><em>T</em></sup><em>A</em><sub><em>v</em></sub> + <em>A</em><sub><em>v</em></sub><sup><em>T</em></sup><em>A</em><sub><em>u</em></sub> = 0.</span></p>
+class="math display"><em>A</em><sub><em>u</em></sub><sup><em>T</em></sup><em>A</em><sub><em>v</em></sub> + <em>A</em><sub><em>v</em></sub><sup><em>T</em></sup><em>A</em><sub><em>u</em></sub> = 0.</span></em></p>
 </div>
 <div class="proof">
 <p><em>Proof.</em> Extend <span
@@ -182,8 +184,9 @@ class="math inline"><em>A</em><sub><em>i</em></sub><sup><em>T</em></sup><em>A</e
 for each <span class="math inline"><em>i</em></span>. ◻</p>
 </div>
 <div class="lem">
-<p><span class="math inline">dim <em>A</em></span> is an even positive
-integer or <span class="math inline">dim <em>A</em> = 1</span>.</p>
+<p><strong>Lemma 2</strong>. <em><span
+class="math inline">dim <em>A</em></span> is an even positive integer or
+<span class="math inline">dim <em>A</em> = 1</span>.</em></p>
 </div>
 <div class="proof">
 <p><em>Proof.</em> As <span class="math inline"><em>A</em></span> is
@@ -204,14 +207,15 @@ which proves that <span class="math inline"><em>n</em></span> must be
 even. ◻</p>
 </div>
 <div class="lem">
-<p>Let <span class="math inline"><em>A</em></span> be a unital f.d.
-<span class="math inline"><em>k</em></span>-algebra. Let <span
+<p><strong>Lemma 3</strong>. <em>Let <span
+class="math inline"><em>A</em></span> be a unital f.d. <span
+class="math inline"><em>k</em></span>-algebra. Let <span
 class="math inline"><em>e</em> ∈ <em>A</em></span> be the unit, and let
 <span class="math inline"><em>u</em></span> be an orthogonal unit
 vector. Then <span
 class="math inline"><em>u</em><sup>2</sup> = −<em>e</em></span> and
 <span
-class="math inline"><em>u</em><sup>*</sup> = −<em>u</em></span>.</p>
+class="math inline"><em>u</em><sup>*</sup> = −<em>u</em></span>.</em></p>
 </div>
 <div class="proof">
 <p><em>Proof.</em> By the braiding equation we have <span
@@ -226,15 +230,15 @@ so <span
 class="math inline"><em>u</em><sup>2</sup> = −<em>e</em></span>. ◻</p>
 </div>
 <div class="prop">
-<p>Let <span class="math inline"><em>B</em></span> be a unital
-associative subalgebra of <span class="math inline"><em>A</em></span>.
-Let <span class="math inline"><em>e</em> ∈ <em>A</em></span> be the
-identity, and let <span
-class="math inline"><em>u</em> ∈ <em>A</em></span> be a unit vector
-orthogonal to <span class="math inline"><em>e</em></span>. Then <span
-class="math display"><em>B</em> ⊕ <em>B</em><em>u</em></span> is a
+<p><strong>Proposition 2</strong>. <em>Let <span
+class="math inline"><em>B</em></span> be a unital associative subalgebra
+of <span class="math inline"><em>A</em></span>. Let <span
+class="math inline"><em>e</em> ∈ <em>A</em></span> be the identity, and
+let <span class="math inline"><em>u</em> ∈ <em>A</em></span> be a unit
+vector orthogonal to <span class="math inline"><em>e</em></span>. Then
+<span class="math display"><em>B</em> ⊕ <em>B</em><em>u</em></span> is a
 subalgebra of <span class="math inline"><em>A</em></span> of dimension
-<span class="math inline">2 ⋅ dim <em>B</em></span>.</p>
+<span class="math inline">2 ⋅ dim <em>B</em></span>.</em></p>
 </div>
 <div class="proof">
 <p><em>Proof.</em> First note that <span
@@ -259,14 +263,17 @@ which is a member of <span
 class="math inline"><em>B</em> ⊕ <em>B</em><em>u</em></span>. ◻</p>
 </div>
 <div class="cor">
-<p>If <span class="math inline"><em>A</em></span> is a real unital f.d.
-algebra, then its dimension over <span class="math inline">ℝ</span> is a
-power of <span class="math inline">2</span>.</p>
+<p><strong>Corolary 1</strong>. <em>If <span
+class="math inline"><em>A</em></span> is a real unital f.d. algebra,
+then its dimension over <span class="math inline">ℝ</span> is a power of
+<span class="math inline">2</span>.</em></p>
 </div>
 <div class="proof">
 <p><em>Proof.</em> Let <span class="math inline"><em>B</em> = ℝ</span>
 and apply the above construction. ◻</p>
 </div>
+
+
                 </div>
                 
                 <a href="index.html" class="back-link">← Back to all posts</a>
