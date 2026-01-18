@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First discussion of Hurwitz's theorem</title>
+    <link rel="stylesheet" href="styles.css">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+    };
+</script>
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div id="sidebar"></div>
+        <script>
+        fetch("sidebar.html")
+            .then(res => res.text())
+            .then(html => {
+            document.getElementById("sidebar").innerHTML = html;
+            });
+        </script>
+        
+        <main class="main-content">
+            <article>
+                <h1 class="First discussion of Hurwitz's theorem">First discussion of Hurwitz's theorem</h1>
+                <div class="post-meta">January 18, 2026</div>
+                
+                <div class="post-content">
+
+<p>In this post, we begin a discussion of Hurwitz’s theorem, which
+states that the real finite-dimensional unital normed algebras are <span
+class="math inline">ℝ</span>, <span class="math inline">ℂ</span>, <span
+class="math inline">ℍ</span> (quaternions) and <span
+class="math inline">𝕆</span> (octonions). We only prove part of it here
+and we delay a full proof to a future post. about later.<br />
+</p>
+<p>We begin by defining our objects of interest, as well as formalizing
+some linear algebra in the setting of <span
+class="math inline"><em>k</em></span>-algebras.<br />
+</p>
+<p>Recall that if <span class="math inline"><em>V</em></span> is a
+vector space over <span class="math inline"><em>k</em></span>, then a
+<em>quadratic form</em> is a map <span
+class="math inline"><em>q</em> : <em>V</em> → <em>k</em></span> such
+that <span
+class="math inline"><em>q</em>(<em>a</em><em>x</em>) = <em>a</em><sup>2</sup><em>q</em>(<em>x</em>)</span>
+for all <span class="math inline"><em>a</em> ∈ <em>k</em></span> and
+<span class="math inline"><em>x</em> ∈ <em>V</em></span>. A form induces
+a symmetric bilinear form <span class="math inline">⟨⋅, ⋅⟩</span>
+defined by <span
+class="math inline">⟨<em>x</em>, <em>y</em>⟩ = <em>q</em>(<em>x</em> + <em>y</em>) − <em>q</em>(<em>x</em>) − <em>q</em>(<em>y</em>)</span>.
+We say a non-zero element <span
+class="math inline"><em>u</em> ∈ <em>V</em></span> is a
+<em>unit-vector</em> if <span
+class="math inline"><em>q</em>(<em>u</em>) = 1</span>. We say a linear
+map <span
+class="math inline"><em>F</em> : <em>V</em> → <em>V</em></span> is an
+<em>orthogonal map</em> if <span
+class="math inline"><em>q</em>(<em>F</em>(<em>x</em>)) = <em>q</em>(<em>x</em>)</span>
+for all <span class="math inline"><em>x</em> ∈ <em>A</em></span>. As an
+example, <span class="math inline">ℝ</span> is a normed space with norm
+<span
+class="math inline"><em>q</em>(<em>x</em>) = <em>x</em><sup>2</sup></span>
+for <span class="math inline"><em>x</em> ∈ ℝ</span>. Similarly, for
+<span class="math inline">ℂ</span>, we have a norm <span
+class="math inline"><em>q</em>(<em>a</em> + <em>i</em><em>b</em>) = <em>a</em><sup>2</sup> + <em>b</em><sup>2</sup></span>.
+Note that we do not deal with any square roots.<br />
+</p>
+<div class="rmk">
+<p>Linear algebra in this setting works exactly as one would expect. In
+particular, if <span class="math inline">(<em>V</em>, <em>q</em>)</span>
+is such a space, then we can assume that we have an orthnormal basis
+with respect to the inner product <span
+class="math inline">⟨⋅, ⋅⟩<sub><em>q</em></sub></span>. If <span
+class="math inline"><em>F</em> : <em>V</em> → <em>V</em></span> is an
+orthogonal map, then <span
+class="math inline">⟨<em>F</em><em>x</em>, <em>F</em><em>y</em>⟩ = ⟨<em>x</em>, <em>y</em>⟩</span>
+for all <span
+class="math inline"><em>x</em>, <em>y</em> ∈ <em>V</em></span>, and
+<span
+class="math inline"><em>F</em><sup><em>T</em></sup><em>F</em> = <em>I</em></span>.</p>
+</div>
+<p>Let <span class="math inline"><em>k</em></span> be a field. A vector
+space <span class="math inline"><em>A</em></span> over <span
+class="math inline"><em>k</em></span>, equipped with a <span
+class="math inline"><em>k</em></span>-linear map <span
+class="math inline"><em>A</em>⊗<sub><em>k</em></sub><em>A</em> → <em>A</em></span>
+is called a <span
+class="math inline"><em>k</em></span>-<em>algebra</em>. We say <span
+class="math inline"><em>A</em></span> is <em>unital</em> if it contains
+a non-zero member <span class="math inline"><em>e</em></span> such that
+<span class="math inline"><em>e</em><em>v</em> = <em>v</em></span> for
+each <span class="math inline"><em>v</em> ∈ <em>A</em></span>. We define
+a <em>normed algebra</em> <span class="math inline"><em>A</em></span> to
+be an algebra equipped with a quadratic form <span
+class="math inline"><em>q</em></span> such that <span
+class="math inline"><em>q</em>(<em>x</em><em>y</em>) = <em>q</em>(<em>x</em>)<em>q</em>(<em>y</em>)</span>
+for all <span
+class="math inline"><em>x</em>, <em>y</em> ∈ <em>A</em></span>. We let
+<span class="math inline">⟨⋅, ⋅⟩</span> denote its inner product.<br />
+</p>
+<p>We now have enough to begin our study properly. Let <span
+class="math inline"><em>A</em></span> be a real finite-dimensional
+unital normed algebra with unit <span
+class="math inline"><em>e</em></span>. For a non-zero element <span
+class="math inline"><em>u</em> ∈ <em>A</em></span>, define the map <span
+class="math inline"><em>A</em><sub><em>u</em></sub> : <em>A</em> → <em>A</em></span>
+by <span
+class="math inline"><em>A</em><sub><em>u</em></sub>(<em>x</em>) = <em>u</em><em>x</em></span>
+for all <span class="math inline"><em>x</em> ∈ <em>A</em></span>. Note
+that <span class="math inline"><em>A</em><sub><em>u</em></sub></span> is
+a linear map, and that <span
+class="math inline"><em>A</em><sub><em>u</em></sub></span> is orthogonal
+when <span class="math inline"><em>u</em></span> is a unit vector. For
+an element <span class="math inline"><em>v</em> ∈ <em>A</em></span>,
+define its <em>involution</em> by <span
+class="math display"><em>v</em><sup>*</sup> = ⟨<em>v</em>, <em>e</em>⟩ − <em>v</em>.</span>
+We note the following properties for <span
+class="math inline"><em>v</em> ∈ <em>A</em></span>.</p>
+<div class="prop">
+<ol>
+<li><p><span
+class="math inline"><em>v</em><sup>*</sup><em>v</em> = <em>q</em>(<em>v</em>)<em>e</em></span></p></li>
+<li><p><span
+class="math inline"><em>v</em><sup>*</sup><sup>*</sup> = <em>v</em></span></p></li>
+<li><p><span
+class="math inline"><em>A</em><sub><em>u</em></sub><sup>−1</sup> = <em>A</em><sub><em>u</em></sub><sup><em>T</em></sup> = <em>A</em><sub><em>u</em><sup>*</sup></sub></span></p></li>
+</ol>
+</div>
+<div class="lem">
+<p>(Braiding equation) Let <span
+class="math inline"><em>u</em>, <em>v</em></span> be <span
+class="math inline">ℝ</span>-linearly independent unit-vectors. Then
+<span
+class="math display"><em>A</em><sub><em>u</em></sub><sup><em>T</em></sup><em>A</em><sub><em>v</em></sub> + <em>A</em><sub><em>v</em></sub><sup><em>T</em></sup><em>A</em><sub><em>u</em></sub> = 0.</span></p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> Extend <span
+class="math inline">{<em>u</em>, <em>v</em>}</span> to a basis, and
+denote the basis by <span
+class="math inline">{<em>e</em><sub>1</sub>, …, <em>e</em><sub><em>n</em></sub>}</span>.
+Let <span
+class="math inline">1 ≤ <em>i</em> &lt; <em>j</em> ≤ <em>n</em></span>.
+Note that for <span class="math inline"><em>v</em> ∈ <em>A</em></span>,
+<span
+class="math inline"><em>q</em>(<em>A</em><sub><em>i</em></sub><em>v</em>) = <em>q</em>(<em>e</em><sub><em>i</em></sub><em>v</em>) = <em>v</em></span>,
+so each <span class="math inline"><em>A</em><sub><em>i</em></sub></span>
+is orthogonal with respect to <span
+class="math inline"><em>q</em></span>, and hence <span
+class="math inline"><em>A</em><sub><em>i</em></sub><sup><em>T</em></sup><em>A</em><sub><em>i</em></sub> = <em>I</em></span>.<br />
+</p>
+<p>Now we wish to prove the other identity. To this end, let <span
+class="math inline"><em>r</em><sub>1</sub>, …, <em>r</em><sub><em>n</em></sub></span>
+be real numbers. Then</p>
+<p><span class="math display">$$\begin{align*}
+    \langle \sum r_i A_i v, \sum r_j A_j v &amp;= ||\sum r_i A_i v||^2
+\\
+      &amp;= ||\sum r_i e_i v||^2 \\
+      &amp;= ||\sum r_i e_i||^2 ||v||^2 \\
+      &amp;= ( \sum r_i^2 ) ||v||^2
+\end{align*}$$</span></p>
+<p>so <span
+class="math display">∑<em>r</em><sub><em>i</em></sub><em>r</em><sub><em>j</em></sub>⟨<em>v</em>, <em>A</em><sub><em>i</em></sub><sup><em>t</em></sup><em>A</em><sub><em>j</em></sub>⟩ = (∑<em>r</em><sub><em>i</em></sub><sup>2</sup>)||<em>v</em>||<sup>2</sup>.</span>
+It is worth pausing a minute to reflect on this sum. If we consider the
+cases <span class="math inline"><em>i</em> = <em>j</em></span> and <span
+class="math inline"><em>i</em> ≠ <em>j</em></span> separately, we
+conclude that <span class="math display">$$\sum\limits_{i &lt; j} r_i
+r_j \langle v, (A_i^T A_j + A_j^T A_i) v\rangle = 0.$$</span> Choosing
+<span class="math inline"><em>r</em><sub><em>i</em></sub> = 1</span> for
+all <span class="math inline"><em>i</em></span> yields <span
+class="math display">⟨<em>v</em>, (<em>A</em><sub><em>i</em></sub><sup><em>T</em></sup><em>A</em><sub><em>j</em></sub> + <em>A</em><sub><em>j</em></sub><sup><em>T</em></sup><em>A</em><sub><em>i</em></sub>)<em>v</em>⟩ = 0</span>
+for all <span class="math inline"><em>v</em></span>. Thus <span
+class="math inline"><em>A</em><sub><em>i</em></sub><sup><em>T</em></sup><em>A</em><sub><em>j</em></sub> + <em>A</em><sub><em>j</em></sub><sup><em>T</em></sup><em>A</em><sub><em>i</em></sub> = 0</span>
+for each <span class="math inline"><em>i</em></span>. ◻</p>
+</div>
+<div class="lem">
+<p><span class="math inline">dim <em>A</em></span> is an even positive
+integer or <span class="math inline">dim <em>A</em> = 1</span>.</p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> As <span class="math inline"><em>A</em></span> is
+unital, we can assume that last basis vector <span
+class="math inline"><em>e</em><sub><em>n</em></sub></span> is a unit.
+Hence <span
+class="math inline"><em>A</em><sub><em>n</em></sub> = <em>I</em></span>.
+Moreover, if <span
+class="math inline"><em>i</em> &lt; <em>n</em></span>, then <span
+class="math display"><em>A</em><sub><em>i</em></sub><sup><em>T</em></sup><em>A</em><sub><em>n</em></sub> + <em>A</em><sub><em>n</em></sub><sup><em>T</em></sup><em>A</em><sub><em>i</em></sub> = 0</span>
+i.e. <span
+class="math display">−<em>A</em><sub><em>i</em></sub><sup><em>T</em></sup> = <em>A</em><sub><em>i</em></sub></span>
+so <span
+class="math display"><em>A</em><sub><em>i</em></sub><sup>2</sup> = −<em>I</em></span>
+hence <span
+class="math display">det (<em>A</em>)<sup>2</sup> = (−1)<sup><em>n</em></sup></span>
+which proves that <span class="math inline"><em>n</em></span> must be
+even. ◻</p>
+</div>
+<div class="lem">
+<p>Let <span class="math inline"><em>A</em></span> be a unital f.d.
+<span class="math inline"><em>k</em></span>-algebra. Let <span
+class="math inline"><em>e</em> ∈ <em>A</em></span> be the unit, and let
+<span class="math inline"><em>u</em></span> be an orthogonal unit
+vector. Then <span
+class="math inline"><em>u</em><sup>2</sup> = −<em>e</em></span> and
+<span
+class="math inline"><em>u</em><sup>*</sup> = −<em>u</em></span>.</p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> By the braiding equation we have <span
+class="math inline"><em>A</em><sub><em>u</em></sub><sup><em>T</em></sup><em>A</em><sub><em>e</em></sub> = −<em>A</em><sub><em>e</em></sub><sup><em>T</em></sup><em>A</em><sub><em>u</em></sub></span>
+i.e. <span
+class="math inline"><em>A</em><sub><em>u</em></sub><sup><em>T</em></sup> = −<em>A</em><sub><em>u</em></sub></span>
+so <span
+class="math inline"><em>u</em><sup>*</sup> = −<em>u</em></span>.
+Therefore <span
+class="math inline"><em>q</em>(<em>u</em>)<em>e</em> = <em>u</em><sup>*</sup><em>u</em> = −<em>u</em><sup>2</sup></span>
+so <span
+class="math inline"><em>u</em><sup>2</sup> = −<em>e</em></span>. ◻</p>
+</div>
+<div class="prop">
+<p>Let <span class="math inline"><em>B</em></span> be a unital
+associative subalgebra of <span class="math inline"><em>A</em></span>.
+Let <span class="math inline"><em>e</em> ∈ <em>A</em></span> be the
+identity, and let <span
+class="math inline"><em>u</em> ∈ <em>A</em></span> be a unit vector
+orthogonal to <span class="math inline"><em>e</em></span>. Then <span
+class="math display"><em>B</em> ⊕ <em>B</em><em>u</em></span> is a
+subalgebra of <span class="math inline"><em>A</em></span> of dimension
+<span class="math inline">2 ⋅ dim <em>B</em></span>.</p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> First note that <span
+class="math inline"><em>B</em> ⊕ <em>B</em><em>u</em></span> has
+dimension <span class="math inline">2 ⋅ dim <em>B</em></span> by the
+definition of the direct sum, and the fact that if <span
+class="math inline">{<em>v</em><sub><em>i</em></sub>}</span> is an
+orthonormal basis of <span class="math inline"><em>B</em></span> then
+<span
+class="math inline">{<em>v</em><sub><em>i</em></sub><em>u</em>}</span>
+is also an orthonormal basis. Thus, it suffices to show that <span
+class="math inline"><em>B</em> ⊕ <em>B</em><em>u</em></span> is closed
+under multiplication. Indeed, let <span
+class="math inline"><em>a</em> + <em>b</em><em>u</em></span> and <span
+class="math inline"><em>c</em> + <em>d</em><em>u</em></span> be members
+of <span class="math inline"><em>B</em> ⊕ <em>B</em><em>u</em></span>,
+where <span
+class="math inline"><em>a</em>, <em>b</em>, <em>c</em>, <em>d</em> ∈ <em>B</em></span>.
+Then <span
+class="math display">(<em>a</em> + <em>b</em><em>u</em>)(<em>c</em> + <em>d</em><em>u</em>) = <em>a</em><em>c</em> + <em>a</em>(<em>d</em><em>u</em>) + (<em>b</em><em>u</em>)<em>d</em> + (<em>b</em><em>u</em>)(<em>d</em><em>u</em>) = (<em>a</em><em>c</em> − <em>b</em><em>d</em>) + (<em>a</em><em>d</em> − <em>b</em><em>d</em><sup>*</sup>)<em>u</em></span>
+which is a member of <span
+class="math inline"><em>B</em> ⊕ <em>B</em><em>u</em></span>. ◻</p>
+</div>
+<div class="cor">
+<p>If <span class="math inline"><em>A</em></span> is a real unital f.d.
+algebra, then its dimension over <span class="math inline">ℝ</span> is a
+power of <span class="math inline">2</span>.</p>
+</div>
+<div class="proof">
+<p><em>Proof.</em> Let <span class="math inline"><em>B</em> = ℝ</span>
+and apply the above construction. ◻</p>
+</div>
+                </div>
+                
+                <a href="index.html" class="back-link">← Back to all posts</a>
+            </article>
+        </main>
+    </div>
+</body>
+</html>
